@@ -1,5 +1,5 @@
-name: Build Windows EXE
-# This triggers the build when you push code, or manually via a button
+name: Build Windows EXE (32-bit)
+
 on:
   push:
     branches: [ main, master ]
@@ -17,6 +17,7 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
+        architecture: 'x86'
 
     - name: Install PyInstaller
       run: |
@@ -29,5 +30,5 @@ jobs:
     - name: Upload EXE for download
       uses: actions/upload-artifact@v4
       with:
-        name: PingMonitor-Windows-EXE
+        name: PingMonitor-Windows-32bit-EXE
         path: dist/ping_monitor.exe

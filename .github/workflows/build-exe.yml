@@ -1,5 +1,4 @@
 name: Build Windows EXE
-
 # This triggers the build when you push code, or manually via a button
 on:
   push:
